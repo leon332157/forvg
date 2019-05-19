@@ -1,0 +1,165 @@
+ul, li {
+    text-indent: 0;
+    text-decoration: none;
+    margin: 0;
+    padding: 0
+}
+
+img {
+    border: 0
+}
+
+body {
+    background-color: #000;
+    color: #000;
+    font: 100%/18px helvetica, arial, sans-serif
+}
+
+canvas {
+    cursor: crosshair;
+    display: block;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+/*
+
+body {
+    position: absolute;
+    bottom: 0;
+    !*right: 50vw;*!
+    transform: translateX(50%);
+    background-color: #212529;
+}
+*/
+
+@keyframes rainbowColor {
+    0% {
+        background-color: #FF1493;
+    }
+    12.5% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: orange;
+    }
+
+    37.5% {
+        background-color: #FF0;
+    }
+
+    50% {
+        background-color: #7FFF00;
+    }
+
+    62.5% {
+        background-color: #0FF;
+    }
+
+    75% {
+        background-color: #00F;
+    }
+
+    87.5% {
+        background-color: #9932CC;
+    }
+
+    100% {
+        background-color: #FF1493;
+    }
+}
+
+#next-button {
+    animation: rainbowColor 5s infinite linear;
+    border-radius: 10px;
+    color: #FFFFFF;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+#svg-button {
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 80%;
+    border: none;
+    cursor: pointer;
+
+}
+
+#next-button-div {
+    margin-top: 4%;
+    position: relative;
+    z-index: 20;
+
+}
+
+.fadein {
+    animation: fadeInOpacity 1 linear 1s;
+}
+
+.fadeout {
+    animation: fadeOutOpacity 1 linear 1s forwards;
+
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+
+
+    }
+}
+
+@keyframes fadeOutOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+#next-button:hover {
+    background-color: transparent;
+    transform: rotate(180deg);
+}
+
+#text-main-div {
+    margin-left: 99px;
+    margin-top: 3%;
+    /*background-color: gray;*/
+    z-index: 19;
+    border-radius: 100px;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    bottom: 0;
+}
+
+#main-text {
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-left: 9.375%;
+}
+
+.unblur-text {
+    animation: unblur 1 linear 3s forwards;
+}
+
+@keyframes unblur {
+    0% {
+        filter: blur(10px);
+    }
+    100% {
+        filter: none;
+    }
+}

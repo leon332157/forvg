@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Victoria</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="jquery-3.4.1.slim.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="text-main-div" style="visibility: hidden">
+    <pre id="main-text">
+        <i>Dear Victoria</i>:
+            This is a small firework website that I made, hope you like it.
+
+        First of all, I'm sorry for not telling you why I am scared of you, now here's the reason: I'm scared of embarrassment and rejections.
+        Usually when I talk to you in person, there's always your friends or my friends around which makes me feel ok if I mess anything up. But if not,
+        then it's like a situation where you need to make a presentation and you don't know what to talk about and you are just standing there when people
+        are staring at you and you want to find some place to hide yourself. Personally, I think this is definitely a disadvantage when you are trying to
+        be socialized. But for me, I can't help with this. Every time I see you I just want to hide myself. But there's just some unexplained force that
+        drives me. And every time I mess up something, I will be so sad. And this just goes on over and over. Even if you and Audrey says that I'm not stupid,
+        I believe I am, at least on a social level. I'm not a person that takes any compliments, so I'm very not used to it, I'm sorry for that. My whole life
+        has been people making fun of me, to the point where I think that people saying good thing about me makes feel sad. So the result is me being so
+        defensive on talking to people and making friends. Once in elementary school, I had a good friend who is in the same English class I go to on weekends.
+        He once wanted to come to our home and play game with me, so I said ok. When my mom knows the happenings, she said never let anyone into your home
+        with out talking to her. As I'm recalling this now, this seems pretty acceptable in ths US, but not very common in China, which is also one of the reason
+        I don't visit my friends home. Recalling the time in middle school, which was also a boarding school where you live and eat in there. I was one of those
+        kids that always break the rules, I once was told to stay at teacher's office to write reflections, even though I didn't know how I went through, it was a hard time.
+        Here in the US, I am lucky enough to be in the public school system, and I'm lucky enough to meet you, Audrey and Preston, and many others who changed
+        me in many ways. Especially you because the very for first time you are the girl I would write this to. There's a saying that "A person will always give their
+        best face to other people they meet, and the worst thing are for their closet friends." I would totally agree with this. I never told anyone about how I think
+        on things than just a few people. And even with that I feel unsafe, I will always make excuses to avoid about it. Which is what happen in most cases.
+        But apparently this is not the way to go, so I had a thought about this, and I have to thank Audrey that encouraged me to make this. I'm just too sensitive when
+        texting to someone that is very important to me, anything that might be a sign of rejection will upset me and makes me think about what I could've did wrong
+        and how I would fix that. I still have to lot to learn from all of you, and I wish I could always be with you all. I will never able to explain how important
+        these kind of experiences are to me. Thanks for being my best friend.
+
+        Please make sure to keep this secret.
+
+    Sincerely,
+    Leon
+    May 19th, 2019
+    </pre>
+</div>
+<div id="next-button-div">
+    <button id="svg-button" value="test" onclick="showTextBox()">
+        <svg id="next-button" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </button>
+</div>
+
+<div id="firework"></div>
+<script type="text/javascript">
+    let textMainDiv = $('#text-main-div');
+    let mainText = $('#main-text');
+    textMainDiv.css('height', window.innerHeight * 0.79);
+    textMainDiv.css('width', window.innerWidth - 200);
+    let textboxShow = false;
+    textMainDiv.on('webkitAnimationEnd', function (e) {
+        if (e.target === 'div#text-main-div.fadeout') {
+            textMainDiv.css('visibility', 'hidden')
+        }
+    });
+
+    function showTextBox() {
+        if (!textboxShow) {
+            textMainDiv.toggleClass('fadeout', false);
+            textMainDiv.toggleClass('fadein', true);
+            mainText.toggleClass('unblur-text', true);
+            textMainDiv.css('visibility', 'visible');
+            console.log('showing textbox');
+
+            textboxShow = true
+        } else {
+            textMainDiv.toggleClass('fadein', false);
+            textMainDiv.toggleClass('fadeout', true);
+            mainText.toggleClass('unblur-text', false);
+            console.log('hiding textbox');
+            textboxShow = false
+        }
+
+    }
+
+</script>
+<script src="index.js" type="text/javascript"></script>
+<script src="firework.js" type="text/javascript"></script>
+</body>
+</html>
